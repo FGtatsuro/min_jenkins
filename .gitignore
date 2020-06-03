@@ -1,0 +1,7 @@
+.build
+
+todo
+tags
+
+# Default archive file name
+jenkins_home_backup.tar.gz

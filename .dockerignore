@@ -1,0 +1,14 @@
+.dockerignore
+.git
+.gitignore
+.github
+**/.gitkeep
+
+Dockerfile
+README.md
+Makefile
+
+.build
+
+todo
+tags
