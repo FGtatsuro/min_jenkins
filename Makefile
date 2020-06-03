@@ -21,11 +21,11 @@ run: build
 	docker volume create -d $(VOLUME_DRIVER) $(VOLUME_OPTION) $(VOLUME_NAME)
 	if [ -z "`docker ps | grep $(CONTAINER_NAME)`" ]; then \
 		docker run -i -d --rm \
-		--name $(CONTAINER_NAME) \
-		-p $(PORT):8080 \
-		-e TZ=$(TIME_ZONE) \
-		-v $(VOLUME_NAME):/var/jenkins_home \
-		$(CONTAINER_TAG); \
+			--name $(CONTAINER_NAME) \
+			-p $(PORT):8080 \
+			-e TZ=$(TIME_ZONE) \
+			-v $(VOLUME_NAME):/var/jenkins_home \
+			$(CONTAINER_TAG); \
 	fi
 
 clean:
