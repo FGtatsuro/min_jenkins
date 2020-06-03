@@ -7,8 +7,8 @@ VOLUME_NAME = jenkins_home
 PORT = 8080
 ARCHIVE_NAME = jenkins_home_backup.tar.gz
 
-.PHONY: all build run clean backup restore remove_volume
 
+.PHONY: all build run clean
 all: run
 
 build: .build
@@ -31,12 +31,16 @@ run: build
 clean:
 	-docker rm -f $(CONTAINER_NAME)
 
+
+.PHONY: start stop restart
 start: run
 
 stop: clean
 
 restart: stop start
 
+
+.PHONY: backup restore remove_volume
 backup: run
 	docker run --rm \
 		--volumes-from $(CONTAINER_NAME) \
