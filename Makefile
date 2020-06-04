@@ -30,6 +30,7 @@ run: build
 
 clean:
 	-docker rm -f $(CONTAINER_NAME)
+	rm .build
 
 
 .PHONY: start stop restart
